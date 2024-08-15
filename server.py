@@ -230,7 +230,7 @@ bgmi_cooldown = {}
 COOLDOWN_TIME =0
 
 # Handler for /bgmi command
-@bot.message_handler(commands=['bgmi'])
+@bot.message_handler(commands=['attack'])
 def handle_bgmi(message):
     user_id = str(message.chat.id)
     if user_id in allowed_user_ids:
@@ -262,7 +262,7 @@ def handle_bgmi(message):
                # response = f"Attack Finished\n\nTarget : {target}\nPort : {port}\nTime : {time}\n\n"
                 response = f"💥 BGMI Attack Finished 🏁\n🎯Target: {target}\n🔎Port: {port}\n⚙Time: {time}\n😃Cooldown Finish"
         else:
-            response = "```\n🤧 Usage :- /attack <target> <port> <time>\nCooldown Lag Gya Hai, Now Wait 3 Minute```"  # Updated command syntax
+            response = "\n🤧 Usage :- /attack <target> <port> <time>\nCooldown Lag Gya Hai, Now Wait 3 Minute"  # Updated command syntax
     else:
         response = "❌ You Are Not Authorized To Use This Command ❌."
 
@@ -295,7 +295,7 @@ def show_command_logs(message):
 def show_help(message):
     help_text ='''Available commands :
 💥 /attack : Method For Bgmi Servers
-
+🏳 /check : For Bot Status
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -310,13 +310,13 @@ def show_help(message):
 @bot.message_handler(commands=['start'])
 def welcome_start(message):
     user_name = message.from_user.first_name
-    response = f'''```👋🏻Welcome to Your Home, {user_name}!```'''
+    response = f'''👋🏻Welcome to Your Home, {user_name}!'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
 def welcome_rules(message):
     user_name = message.from_user.first_name
-    response = f'''Don't Dm Me 🙂\nReg : Luis'''
+    response = f'''Don't Dm 🙂\nReg : Luis'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['plan'])
