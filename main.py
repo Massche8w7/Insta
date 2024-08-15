@@ -6,12 +6,12 @@ from telegram import (
     InlineKeyboardButton
 )
 import os
-from telegram.ext import (
-    Updater,
-    Filters,
-    CommandHandler,
-    MessageHandler
-)
+#from telegram.ext import (
+    #Updater,
+   # Filters,
+#    CommandHandler,
+#    MessageHandler
+#)
 
 
 main_keyboard = [
